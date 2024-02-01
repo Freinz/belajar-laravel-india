@@ -18,3 +18,5 @@ use App\Http\Controllers\HomeController;
 Route::get('/',[HomeController::class,'welcome']);
 
 Route::get('/home',[HomeController::class,'index']);
+
+Route::post('/upload',[HomeController::class,'upload']);
