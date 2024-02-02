@@ -57,4 +57,14 @@ class HomeController extends Controller
         return view('display', compact('data'));
     }
 
+    public function delete($id) {
+
+        $data = student::find($id);
+
+        $data->delete();
+
+        return redirect()-> back();
+
+    } 
+
 }

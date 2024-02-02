@@ -14,6 +14,7 @@
         <td>Student Name</td>
         <td>Email</td>
         <td>Image</td>
+        <td>Delete</td>
     </tr>
 
     @foreach($data as $student)
@@ -22,10 +23,12 @@
         <td>{{$student->name}}</td>
         <td>{{$student->email}}</td>
         <td>
-
             <img height="100px" width="100px" src="student/{{$student->image}}" >
-
         </td>
+        <td>
+            <a href="{{url('delete',$student->id)}}">Delete</a>
+        </td>
+
     </tr>
 
     @endforeach

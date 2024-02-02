@@ -22,3 +22,5 @@ Route::get('/home',[HomeController::class,'index']);
 Route::post('/upload',[HomeController::class,'upload']);
 
 Route::get('/view',[HomeController::class,'view']);
+
+Route::get('/delete/{id}',[HomeController::class,'delete']);
