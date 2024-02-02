@@ -47,7 +47,6 @@ class HomeController extends Controller
        return redirect()->back();
         
 
-
     }
 
     public function view() {
@@ -66,5 +65,14 @@ class HomeController extends Controller
         return redirect()-> back();
 
     } 
+
+    public function search(Request $request) {
+
+        $search = $request -> search;
+
+        $data = student::where('name','Like','%'.$search.'%')->orWhere('email','Like','%'.$search.'%') -> get();
+
+        return view('display', compact('data'));
+    }
 
 }

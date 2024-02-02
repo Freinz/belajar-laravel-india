@@ -9,6 +9,17 @@
 
 <h1 style="text-align:center;">Display Data From Database in Laravel</h1>
     
+    <form action="{{url('search')}}" methode="get" align="center">
+
+        <input type="search" name="search" placeholder="Search For Something">
+
+        <input type="submit" value="Search">
+
+    </form>
+
+    <br><br>
+
+
 <table  border="1 px"  align="center">
     <tr style="text-align: center;">
         <td>Student Name</td>
