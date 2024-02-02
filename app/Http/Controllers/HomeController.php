@@ -50,4 +50,11 @@ class HomeController extends Controller
 
     }
 
+    public function view() {
+
+        $data = student::all();
+
+        return view('display', compact('data'));
+    }
+
 }

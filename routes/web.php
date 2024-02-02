@@ -20,3 +20,5 @@ Route::get('/',[HomeController::class,'welcome']);
 Route::get('/home',[HomeController::class,'index']);
 
 Route::post('/upload',[HomeController::class,'upload']);
+
+Route::get('/view',[HomeController::class,'view']);
