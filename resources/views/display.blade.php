@@ -26,11 +26,12 @@
         <td>Email</td>
         <td>Image</td>
         <td>Delete</td>
+        <td>Update</td>
     </tr>
 
-    @foreach($data as $student)
+    @foreach($data as $student) 
 
-    <tr style="text-align: center;">
+    <tr style="text-align: center;"> 
         <td>{{$student->name}}</td>
         <td>{{$student->email}}</td>
         <td>
@@ -38,6 +39,9 @@
         </td>
         <td>
             <a href="{{url('delete',$student->id)}}">Delete</a>
+        </td>
+        <td>
+            <a href="{{url('update_view',$student->id)}}">Update</a>
         </td>
 
     </tr>

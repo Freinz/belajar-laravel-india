@@ -75,4 +75,39 @@ class HomeController extends Controller
         return view('display', compact('data'));
     }
 
+    public function update_view($id) {
+
+        $student = student::find($id); //student merujuk kepada database, $student hanya menyimpan variabel saja
+
+        return view('update_page', compact('student')); // compact itu seperti mengubah baru menggabungkan halaman
+
+    }
+
+    public function update(Request $request, $id) {  //kenapa jadi ada Request $request karna bukan hanya mau mengambil id tp semua data nya
+
+        $student = student::find($id);
+
+        $student -> name = $request -> name; // name yang pertama mengambil dari database, name yang kedua mengambil dari nama di update_page.blade.php 
+
+        $student -> email = $request -> email;
+
+        $image = $request -> file; // file mengambil dari nama di update_page.php
+
+        if($image) {
+
+            $imagename = time().'.'.$image -> getClientOriginalExtension(); // untuk memberikan image kode unik sebagai nama dari image
+    
+            $request -> file -> move('student',$imagename); // mengirim image baru ke folder student
+    
+            $student -> image = $imagename;
+            
+        }
+
+
+        $student->save();
+
+        return redirect()->back();
+
+    }
+
 }
